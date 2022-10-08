@@ -1,8 +1,10 @@
 import useSWR from "swr";
 import { Post } from "types/posts";
 
-export default function usePosts() {
-  const { data, error, ...rest } = useSWR<Post[]>("posts");
+export default function usePosts(initialPosts: Post[]) {
+  const { data, error, ...rest } = useSWR<Post[]>("posts", {
+    fallbackData: initialPosts,
+  });
 
   return {
     error,
