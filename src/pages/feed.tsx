@@ -1,3 +1,1 @@
-import Feed from "views/Feed";
-
-export default Feed;
+export { default, getServerSideProps } from "views/Feed";

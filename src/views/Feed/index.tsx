@@ -53,9 +53,9 @@ const Feed: InferGetServerSidePropsType<typeof getServerSideProps> = ({
 export default Feed;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com//posts");
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
 
   // Pass data to the page via props
-  return { props: { data } };
+  return { props: { initialPosts: data } };
 };
